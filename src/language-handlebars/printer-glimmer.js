@@ -709,6 +709,9 @@ function chooseEnclosingQuote(options, stringLiteral) {
 
   let shouldUseAlternateQuote = false;
 
+  if (stringLiteral.includes("<div title=")) {
+    return preferred;
+  }
   // If `stringLiteral` contains at least one of the quote preferred for
   // enclosing the string, we might want to enclose with the alternate quote
   // instead, to minimize the number of escaped quotes.
